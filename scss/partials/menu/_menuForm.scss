@@ -1,0 +1,51 @@
+.content {
+    background: linear-gradient($card 50%, $card-alt 50%);
+    min-height: 100vh;
+}
+
+.menu,
+.dogMenu {
+    width: 100vw;
+    margin: 0 auto;
+    color: $black;
+    padding: 0 20px 20px;
+    h1 {
+        text-align: center;
+        text-transform: uppercase;
+    }
+    h4 {
+        display: inline-block;
+        margin-bottom: 0px;
+        border-bottom: solid 1px $black;
+    }
+}
+
+.menu {
+    margin-top: 20%;
+    background: $card;
+}
+
+.dogMenu {
+    background: $card-alt;
+}
+
+.menu__items--list {
+    padding-left: 0px;
+    li {
+        list-style: none;
+        padding: 5px 0;
+        text-align: justify;
+    }
+}
+
+@media all and (min-width: 768px) {
+
+// .content {
+//     position: relative;
+//     background: url("../img/coffee_bw.png") no-repeat center center fixed;
+//     height: 100vh;
+//     min-height: 700px;
+// }
+
+}
+

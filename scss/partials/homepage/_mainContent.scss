@@ -1,0 +1,90 @@
+/* content */
+
+.card {
+    position: relative;
+    width: 100%;
+    min-height: 400px;
+    background-color: $card;
+}
+
+.card:nth-of-type(2) {
+    display: none;
+}
+
+.card:last-of-type {
+    background-color: $card-alt;
+}
+
+.card__content {
+    border: $frame;
+    margin: 30px;
+    padding: 3% 0;
+    color: $black;
+}
+
+.card__content>h3, .card__content>p {
+    text-align: center;
+    margin: 10px auto;
+    width: 80%;
+}
+
+.card__content>h3 {
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.card__content>p {
+    line-height: 1.35;
+}
+
+@media all and (min-width: 768px) {
+
+.info {
+    position: relative;
+    flex-direction: row;
+    min-height: 400px;
+    height: 60vh;
+}
+
+.card {
+    min-width: 450px;
+}
+
+.card__content>h3, .card__content>p {
+    text-align: center;
+    margin: 10px auto;
+    width: 50%;
+}
+
+.card__content>h3 {
+    margin-top: 10%;
+    margin-bottom: 30px;
+}
+
+.card__content>p:last-of-type {
+    margin-bottom: 10%;
+}
+
+}
+
+@media all and (min-width: 1200px) {
+
+.info {
+    min-height: 600px;
+}
+
+.card {
+    min-width: 500px;
+}
+
+.card:nth-of-type(2) {
+    display: block;
+    background: url('../img/latte.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.card__content>h3, .card__content>p {
+    width: 40%;
+}
+
+}

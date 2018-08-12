@@ -1,0 +1,36 @@
+/* partials */
+
+@import 'partials/variables';
+@import 'partials/menu/menuGrid';
+@import 'partials/navigation';
+@import 'partials/navToggle';
+@import 'partials/menu/menuForm';
+@import 'partials/footer';
+
+/* base */
+
+html {
+    box-sizing: border-box;
+  }
+
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+ 
+
+  /* helpers */
+
+  .flex {
+      display: flex;
+  }
+
+  .absolute-center {
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+  }

@@ -1,0 +1,20 @@
+/* googlemap */
+
+.map {
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+    height: 150px;
+}
+
+iframe {
+    width: 100%;
+}
+
+@media all and (min-width: 768px) {
+
+.map {
+    flex-direction: row;
+}
+
+}

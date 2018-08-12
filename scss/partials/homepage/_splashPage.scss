@@ -1,0 +1,47 @@
+/* landing page */
+
+.landingPage {
+    display: block;
+    background: url("../img/coffee_bw.png") no-repeat center center fixed;
+    background-size: cover;
+    overflow: hidden;
+    position: relative;
+    height: 700px;
+}
+
+.media {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    text-align: center;
+}
+
+.media__logo {
+    display: block;
+    height: auto;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.fab {
+    margin: 50px 20px;
+    color: white;
+}
+
+@media all and (min-width: 768px) {
+
+.landingPage {
+    height: 1000px;
+}
+
+.media__logo {
+    max-width: 700px;
+}
+
+.fab {
+    margin: 50px 30px;
+    color: white;
+}
+} /* end of media query */
