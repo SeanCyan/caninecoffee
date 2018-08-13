@@ -130,7 +130,24 @@ new Vue({
       treats: treats,
       dogDrinks: dogDrinks,
       flipped: false,
-      mq: window.matchMedia("(max-width: 767px)"),
+      mobile: false,
     },
-
+    methods: {
+      onResize(event) {
+        if (window.matchMedia("(min-width: 768px)").matches) {
+          this.mobile = false;
+        } else {
+          this.mobile = true;
+        }
+      },
+    },
+    mounted() {
+      // Register an event listener when the Vue component is ready
+      window.addEventListener('resize', this.onResize)
+    },
+    
+    beforeDestroy() {
+      // Unregister the event listener before destroying this Vue instance
+      window.removeEventListener('resize', this.onResize)
+    }
 })

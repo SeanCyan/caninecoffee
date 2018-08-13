@@ -26,50 +26,54 @@
                 </ul>
             </nav>
             <div class="content">
-                <div v-show="mq.matches" class="menu">
+                <div v-show="!flipped || mobile" @click="flipped = !flipped" class="menu">
                     <div class="menu--template">
                         <div class="menu__header">
                             <h1>Menu.</h1>
                         </div>
                         <div class="menu__items">
-                            <div>
-                                <h4>Coffee</h4>
-                                <ul class="menu__items--list">
-                                    <li v-for="coffee in coffees">{{coffee.name}} - {{coffee.price}}</li>
-                                </ul>
-                                <p>50p extra for marshmallows & whipped cream and/or syrups (Vanilla, Hazelnut or Caramel)</p>
-                            </div>
-                            <div>
-                                <h4>Tea</h4>
-                                <ul class="menu__items--list">
-                                    <li v-for="tea in teas">{{tea.name}} - {{tea.price}}</li>
-                                </ul>
-                                <p>Available flavours: Rhubarb & Custard, Green Tea, Green Tea with Lemon, Wild Berry, Mango & Strawberry or Blackcurrant</p>
-                            </div>
-                            <div>
-                                <h4>Cold Drinks</h4>
-                                <ul class="menu__items--list">
-                                    <li v-for="drink in coldDrinks">{{drink.name}} - {{drink.price}}</li>
-                                </ul>
-                                <p>Coca Cola, Diet Coke, 7up or Tango</p>
-                            </div>
-                            <div>
-                                <h4>Paninis</h4>
-                                <ul class="menu__items--list">
-                                    <li v-for="panini in paninis">{{panini.name}} - {{panini.price}}</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h4>Sweets</h4>
-                                <p>All of our sweet treats are homemade, delicious and change daily. Please see our selection at the counter or ask a member of our team</p>
-                                <ul class="menu__items--list">
-                                    <li v-for="sweet in sweets">{{sweet.name}} - {{sweet.price}}</li>
-                                </ul>
+                            <div class="menu__items--drink">
+                                <div>
+                                    <h4>Coffee</h4>
+                                    <ul class="menu__items--list">
+                                        <li v-for="coffee in coffees">{{coffee.name}} - {{coffee.price}}</li>
+                                    </ul>
+                                    <p>50p extra for marshmallows & whipped cream and/or syrups (Vanilla, Hazelnut or Caramel)</p>
+                                </div>
+                                <div>
+                                    <h4>Tea</h4>
+                                    <ul class="menu__items--list">
+                                        <li v-for="tea in teas">{{tea.name}} - {{tea.price}}</li>
+                                    </ul>
+                                    <p>Available flavours: Rhubarb & Custard, Green Tea, Green Tea with Lemon, Wild Berry, Mango & Strawberry or Blackcurrant</p>
+                                </div>
+                                <div>
+                                    <h4>Cold Drinks</h4>
+                                    <ul class="menu__items--list">
+                                        <li v-for="drink in coldDrinks">{{drink.name}} - {{drink.price}}</li>
+                                    </ul>
+                                    <p>Coca Cola, Diet Coke, 7up or Tango</p>
+                                </div>
+                            </div> 
+                            <div class="menu__items--food">
+                                <div>
+                                    <h4>Paninis</h4>
+                                    <ul class="menu__items--list">
+                                        <li v-for="panini in paninis">{{panini.name}} - {{panini.price}}</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4>Sweets</h4>
+                                    <ul class="menu__items--list">
+                                        <li v-for="sweet in sweets">{{sweet.name}} - {{sweet.price}}</li>
+                                    </ul>
+                                    <p>All of our sweet treats are homemade, delicious and change daily. Please see our selection at the counter or ask a member of our team</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="dogMenu">
+                <div v-show="flipped || mobile" @click="flipped = !flipped" class="dogMenu">
                     <div class="menu--template">
                         <div class="menu__header">
                             <h1>Canine Menu.</h1>

@@ -38,14 +38,77 @@
     }
 }
 
+
 @media all and (min-width: 768px) {
 
-// .content {
-//     position: relative;
-//     background: url("../img/coffee_bw.png") no-repeat center center fixed;
-//     height: 100vh;
-//     min-height: 700px;
-// }
+.content {
+    position: relative;
+    background: url("../img/coffee_bw.png") no-repeat center center fixed;
+    height: 100vh;
+}
+
+.menu, .dogMenu {
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    width: 80%;
+    height: 80%;
+    min-width: 800px;
+    margin: 7% auto 0;
+    box-shadow: 14px 14px 23px -2px rgba(0,0,0,0.75);
+    h1, h4 {
+        margin-top: 0px;
+    }
+    h4 {
+        font-size: 1.5vmin;
+    }
+    li {
+        font-size: 1.5vmin;
+    }
+    p {
+        font-size: 1.5vmin;
+    }
+}
+
+.menu {
+    background-color: $card;
+}
+
+.dogMenu {
+    background: $card-alt;
+}
+
+.menu--template {
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    margin: 30px;
+    padding: 20px;
+    border: $frame;
+}
+
+.menu__items--drink {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+
+.menu__items--food {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    margin-top: -50px;
+}
+
+.menu__items--drink > div, .menu__items--food > div {
+    width: 30%;
+    margin: 0 20px;
+}
 
 }
 
+@media all and (min-width: 1300px) {
+
+.menu__items--food {
+    margin-top: 0px;
+}
+
+}
