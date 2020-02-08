@@ -1,46 +1,50 @@
 const coffees = [
     {
       name: 'Americano',
-      price: '£2.00'  
+      price: '£1.50'  
     },
     {
       name: 'Flat White',
-      price: '£2.50'  
-    },
-    {
-      name: 'Latte',
-      price: '£2.50'  
-    },
-    {
-      name: 'Cappuccino',
-      price: '£2.50'  
-    },
-    {
-      name: 'Espresso',
       price: '£1.80'  
     },
     {
+      name: 'Latte',
+      price: '£1.80'  
+    },
+    {
+      name: 'Cappuccino',
+      price: '£1.75'  
+    },
+    {
+      name: 'Espresso',
+      price: '£1.50'  
+    },
+    {
       name: 'Mocha',
-      price: '£2.50'  
+      price: '£1.80'  
     },
     {
      name: 'Hot Chocolate',
-     price: '£2.40'
+     price: '£1.80'
     }
 ]
 
 const teas = [
     {
      name: 'Tea for One',
-     price: '£1.50'  
+     price: '£1.20'  
     },
     {
      name: 'Tea for Two',
-     price: '£2.90'  
+     price: '£2.10'  
+    },
+    {
+      name: 'Earl Grey',
+      price: '£1.20',
     },
     {
      name: 'Flavoured Teas',
-     price: '£2.00'  
+     price: '£1.50'  
     },
 ]
 
@@ -50,29 +54,38 @@ const coldDrinks = [
       price: '£1.00'  
     },
     {
-      name:'Bottled Drinks',
-      price: '£1.50' 
+      name:'Canned Drinks',
+      price: '75p' 
      }
 ]
 
 const paninis = [
     {
+      name: 'Jalapeno Spicy Chicken',
+      price: '£3.75'  
+    },
+    {
+      name: 'Chicken Tikka',
+      price:  '£3.75'   
+    },
+    {
+      name: 'Mozzarella, Pesto & Tomato',
+      price: '£3.75'  
+    },
+    {
       name: 'Ham & Cheese',
-      price: '£4.50'  
+      price: '£2.75'  
     },
     {
-      name: 'Tuna Mayo & Cheese',
-      price:  '£4.50'   
+      name: 'Cheese Savoury',
+      price:  '£2.75'   
     },
     {
-      name: 'Mozzarella, Tomato & Pesto',
-      price: '£4.50'  
-    },
-    {
-      name: 'Chicken & Bacon Mayo',
-      price: '£4.50'  
+      name: 'Chicken & Bacon',
+      price: '£2.75'  
     },
 ]
+
 
 const sweets = [
     {
@@ -91,19 +104,27 @@ const sweets = [
 
 const wetFood = [
     {
-      name: 'Lillys Kitchen Organic',
-      price: '£1.75'  
+      name: 'Afternoon Tea',
+      price: 'from £3.50'   
     },
+    {
+      name: 'Lillys Kitchen Organic',
+      price: '£1.10'  
+    }
 ]
 
 const treats = [
     {
-      name: 'Iced Peanut Butter & Carrot Cupcake',
-      price: '£2.25' 
+      name: 'Pup-Tart',
+      price: '50p each' 
     },
     {
       name: 'Peanut Butter Doggy Doughnut',
-      price: '£1.50'  
+      price: '35p each'  
+    },
+    {
+      name: 'Sausage Bowl',
+      price: 'sm 50p, lg £1.00'  
     }
 ]
 
@@ -113,7 +134,7 @@ const dogDrinks = [
       price: 'FREE'  
     },
     {
-      name: 'Woof & Brew Selection',
+      name: 'Woof & Brew Selection (flavours below)',
       price: '£1.00 per bowl'
     }
 ]

@@ -1,10 +1,10 @@
 /* partials */
 
 @import 'partials/variables';
-@import 'partials/enquiry/enquiryGrid';
+@import 'partials/gallery/galleryGrid';
 @import 'partials/navigation';
 @import 'partials/navToggle';
-@import 'partials/enquiry/form';
+@import 'partials/gallery/galleryContent';
 @import 'partials/footer';
 
 /* base */
@@ -34,6 +34,7 @@ html {
   h1 {
     font-family: $sansSerif;
   }
+
  
 
   /* helpers */

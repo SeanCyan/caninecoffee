@@ -9,8 +9,9 @@
     <!--css-->
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
     <link href="https://fonts.googleapis.com/css?family=Lato|Yantramanav" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/enquiry.css">
+    <link rel="stylesheet" href="css/gallery.css">
     </head>
 
     <body>
@@ -24,36 +25,21 @@
                 <ul class="navigation">
                     <li class="nav__item"><a href="index">Home</a></li>
                     <li class="nav__item"><a href="menu">Menu</a></li>
-                    <li class="nav__item"><a href="gallery">Gallery</a></li>
+                    <li class="nav__item"><a href="#" class="selected">Gallery</a></li>
                     <li class="nav__item"><a href="index#findUs">Find Us</a></li>
-                    <li class="nav__item"><a href="#" class="selected">Enquiries</a></li>
+                    <li class="nav__item"><a href="enquiries">Enquiries</a></li>
                 </ul>
             </nav>
-            <div class="content">
-                <div class="enquiry">
-                    <div class="enquiry__form--template">
-                        <div class="enquiry__head">
-                            <h1 class="enquiry__head--title">Enquire.</h1>
-                            <p class="enquiry__head--intro">We'd love to hear from you! If you want to ask about booking an event, or have anything else to tell us, please let us know below...</p>
-                        </div>
-                        <div class="enquiry__form">
-                            <form action="form_submission.php" method="POST" enctype="multipart/form-data" class="form">
-                                <fieldset>
-                                    <input type="name" name="name" placeholder="Your Name" class="info">
-                                    <input type="email" name="email" placeholder="Your Email" class="info">
-                                </fieldset>
-                                <fieldset>
-                                    <input type="phone" name="phone" placeholder="Your Phone Number" class="info">
-                                    <input type="title" name="title" placeholder="Enquiry Title" class="info">
-                                </fieldset>
-                                <fieldset>
-                                    <textarea name="message" id="enquiry" placeholder="Type Your Message Here..."></textarea>
-                                </fieldset>
-                                <fieldset>
-                                    <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
-                                </fieldset>
-                            </form>
-                        </div>
+            <div class="content__container">
+                <div class="content">
+                    <div class="gallery">
+                        <img v-for="(img, index) in gallery" :src=img.src @click="showLbx" class="thumbnail">
+                    </div>
+                    <div v-show="isVisible" class="lightbox">
+                        <i class="far fa-times-circle fa-3x" @click="hideLbx"></i>
+                        <i class="fas fa-angle-left fa-3x" @click="showPrev"></i>
+                        <i class="fas fa-angle-right fa-3x" @click="showNext"></i>
+                        <img class="lbxImg" :src=src>
                     </div>
                 </div>
             </div>
@@ -82,6 +68,8 @@
                     </aside>
             </div>
         </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>    
+    <script src="js/gallery.js"></script>
     <script src="js/scripts.js"></script>
     </body>
 </html>

@@ -5,9 +5,15 @@
     flex-direction: column;
     background-color: $nav;
     padding-top: 5px;
+    font-family: $sansSerif;
+}
+
+.nav-icon {
+    z-index: 20;
 }
 
 .navigation {
+    z-index: 30;
     height: 0;
     margin: 0;
     padding-left: 0;
@@ -27,7 +33,8 @@
     color: rgba(255, 255, 255, 0.8);
 }
 
-.navigation > li:hover, a:hover {
+.navigation > li:hover,
+.selected {
     cursor: pointer;
     color: $link;
 }

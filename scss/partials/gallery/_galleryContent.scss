@@ -1,0 +1,76 @@
+.content__container {
+    display: flex;
+    flex-direction: column;
+    background: url("../img/coffee_bw.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
+
+.content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.gallery {
+    position: relative;
+    width: 95%;
+    flex: 1;
+    margin: 100px auto;
+    padding: 20px;
+}
+
+.thumbnail {
+    width: 100%;
+    transition: 0.5s ease-out;
+}
+
+.thumbnail:hover {
+    cursor: pointer;
+    transform: scale(.95);
+}
+
+.lightbox {
+    z-index: 40;
+    position: fixed;
+    top: 0; bottom: 0; left: 0; right: 0;
+    background-color: $nav;
+}
+
+.lbxImg {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    width: 60%;
+}
+
+.fa-times-circle {
+    position: absolute;
+    top: 1%; right: 1%;
+    color: white;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.fa-angle-left, .fa-angle-right {
+    position: absolute;
+    top: 50%;
+    color: white;
+}
+
+.fa-angle-left {
+    left: 5%;;
+}
+
+.fa-angle-right {
+    right: 5%;
+}
+
+@media all and (min-width: 768px) {
+   
+.gallery {
+    width: 80%;
+}
+
+}

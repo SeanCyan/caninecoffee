@@ -9,12 +9,13 @@
     margin: 0 auto;
     color: $black;
     padding: 0 20px 20px;
+    line-height: 1.3;
     h1 {
         text-align: center;
         text-transform: uppercase;
     }
     h4 {
-        display: inline-block;
+        display: block;
         margin-bottom: 0px;
         border-bottom: solid 1px $black;
     }
@@ -29,6 +30,10 @@
     background: $card-alt;
 }
 
+.menu__header > span {
+    display: none;
+}
+
 .menu__items--list {
     padding-left: 0px;
     li {
@@ -38,33 +43,32 @@
     }
 }
 
+.menu__items--subList > li {
+    padding: 5px 0;
+}
+
 
 @media all and (min-width: 768px) {
 
 .content {
     position: relative;
-    background: url("../img/coffee_bw.png") no-repeat center center fixed;
+    background: url("../img/coffee_bw.jpg") no-repeat center center fixed;
     height: 100vh;
 }
 
 .menu, .dogMenu {
     position: absolute;
     top: 0; left: 0; bottom: 0; right: 0;
-    width: 80%;
+    width: 90%;
     height: 80%;
-    min-width: 800px;
+    min-height: 600px;
     margin: 7% auto 0;
     box-shadow: 14px 14px 23px -2px rgba(0,0,0,0.75);
     h1, h4 {
         margin-top: 0px;
+        border-bottom: none;
     }
-    h4 {
-        font-size: 1.5vmin;
-    }
-    li {
-        font-size: 1.5vmin;
-    }
-    p {
+    h4, li, p {
         font-size: 1.5vmin;
     }
 }
@@ -85,16 +89,19 @@
     border: $frame;
 }
 
-.menu__items--drink {
+.menu__header > span {
+    display: block;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.menu__items--drink, .menu__items--food {
     display: flex;
     flex-direction: row;
-    justify-content: end;
+    justify-content: flex-end;
 }
 
 .menu__items--food {
-    display: flex;
-    flex-direction: row;
-    justify-content: end;
     margin-top: -50px;
 }
 
@@ -103,12 +110,55 @@
     margin: 0 20px;
 }
 
+.dog__menu--food {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    div {
+        width: 45%;
+    }
 }
 
-@media all and (min-width: 1300px) {
+.dog__menu--drink {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* flip transition */
+
+.flip-enter-active, .backFlip-enter-active  {
+    transition: all 0.4s ease;
+}
+  
+.flip-leave-active, .backFlip-leave-active {
+display: none;
+}
+
+.flip-enter, .flip-leave, .backFlip-enter, .backFlip-leave {
+transform: rotateY(180deg);
+opacity: 0;
+}
+
+}
+
+@media all and (min-width: 1400px) and (min-height: 800px) {
+
+.menu, .dogMenu {
+    width: 80%;
+}
 
 .menu__items--food {
-    margin-top: 0px;
+    margin-top: -35px;
+}
+
+.menu__header {
+    margin-bottom: 50px;
+} 
+
+.menu__items--canine {
+    padding: 20px;
 }
 
 }

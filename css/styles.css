@@ -33,9 +33,14 @@
   z-index: 10;
   flex-direction: column;
   background-color: rgba(0, 0, 0, 0.8);
-  padding-top: 5px; }
+  padding-top: 5px;
+  font-family: "Yantramanav", sans-serif; }
+
+.nav-icon {
+  z-index: 20; }
 
 .navigation {
+  z-index: 30;
   height: 0;
   margin: 0;
   padding-left: 0;
@@ -53,7 +58,8 @@
   height: 100%;
   color: rgba(255, 255, 255, 0.8); }
 
-.navigation > li:hover, a:hover {
+.navigation > li:hover,
+.selected {
   cursor: pointer;
   color: #c2faf0; }
 
@@ -151,7 +157,7 @@
 /* landing page */
 .landingPage {
   display: block;
-  background: url("../img/coffee_bw.png") no-repeat center center fixed;
+  background: url("../img/coffee_bw.jpg") no-repeat center center fixed;
   background-size: cover;
   overflow: hidden;
   position: relative;
@@ -211,10 +217,12 @@
   width: 80%; }
 
 .card__content > h3 {
+  font-family: "Yantramanav", sans-serif;
   text-transform: uppercase;
   margin-bottom: 15px; }
 
 .card__content > p {
+  font-size: 14px;
   line-height: 1.35; }
 
 @media all and (min-width: 768px) {
@@ -225,12 +233,12 @@
     height: 60vh; }
 
   .card {
-    min-width: 450px; }
+    min-height: 467px; }
 
   .card__content > h3, .card__content > p {
     text-align: center;
     margin: 10px auto;
-    width: 50%; }
+    width: 40%; }
 
   .card__content > h3 {
     margin-top: 10%;
@@ -242,16 +250,16 @@
   .info {
     min-height: 600px; }
 
-  .card {
-    min-width: 500px; }
-
   .card:nth-of-type(2) {
     display: block;
     background: url("../img/latte.jpg") no-repeat center center;
     background-size: cover; }
 
   .card__content > h3, .card__content > p {
-    width: 40%; } }
+    width: 40%; }
+
+  .card__content > p {
+    font-size: 16px; } }
 /* googlemap */
 .map {
   flex-direction: column;
@@ -270,7 +278,8 @@ iframe {
   flex-direction: column;
   width: 100%;
   background: rgba(39, 38, 38, 0.9);
-  color: white; }
+  color: white;
+  font-family: "Yantramanav", sans-serif; }
 
 .footer__item {
   text-align: center;
@@ -303,12 +312,19 @@ iframe {
 html {
   box-sizing: border-box; }
 
-*, *:before, *:after {
-  box-sizing: inherit; }
-
 a {
   text-decoration: none;
   color: inherit; }
+
+a:hover {
+  cursor: pointer;
+  color: #c2faf0; }
+
+body {
+  font-family: "Lato", sans-serif; }
+
+h1 {
+  font-family: "Yantramanav", sans-serif; }
 
 /* helpers */
 .flex {

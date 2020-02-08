@@ -29,11 +29,13 @@
 }
 
 .card__content>h3 {
+    font-family: $sansSerif;
     text-transform: uppercase;
     margin-bottom: 15px;
 }
 
 .card__content>p {
+    font-size: $fontSmall;
     line-height: 1.35;
 }
 
@@ -47,13 +49,13 @@
 }
 
 .card {
-    min-width: 450px;
+    min-height: 467px;
 }
 
 .card__content>h3, .card__content>p {
     text-align: center;
     margin: 10px auto;
-    width: 50%;
+    width: 40%;
 }
 
 .card__content>h3 {
@@ -73,10 +75,6 @@
     min-height: 600px;
 }
 
-.card {
-    min-width: 500px;
-}
-
 .card:nth-of-type(2) {
     display: block;
     background: url('../img/latte.jpg') no-repeat center center;
@@ -85,6 +83,10 @@
 
 .card__content>h3, .card__content>p {
     width: 40%;
+}
+
+.card__content>p  {
+    font-size: $fontLarge;
 }
 
 }

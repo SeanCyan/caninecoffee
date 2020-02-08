@@ -15,13 +15,22 @@ html {
     box-sizing: border-box;
   }
 
-  *, *:before, *:after {
-    box-sizing: inherit;
-  }
-
   a {
     text-decoration: none;
     color: inherit;
+  }
+
+  a:hover {
+    cursor: pointer;
+    color: $link;
+  }
+
+  body {
+    font-family: $sansSerifBody;
+  }
+
+  h1 {
+    font-family: $sansSerif;
   }
 
   /* helpers */

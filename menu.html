@@ -1,10 +1,14 @@
 <!doctype HTML>
 <html>
     <head>
-    <title>Canine Coffee | Enquiry Form</title>
+    <title>Canine Coffee | Seaham's Dog Friendly Coffee House</title>
     <!--meta-->
     <meta charset="utf-8"/>
+    <meta name="description" content="Canine Coffee is Seahams number one stop for you and your dog. Serving the best coffee in town as well as hot food and fresh baked cakes and snacks for you and your pup alike!"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--css-->
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Yantramanav" rel="stylesheet"> 
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/menu.css">
     </head>
@@ -18,103 +22,109 @@
                     <span></span>
                 </div>
                 <ul class="navigation">
-                    <li class="nav__item"><a href="index.html">Home</a></li>
-                    <li class="nav__item"><a href="#">Menu</a></li>
-                    <li class="nav__item"><a>Gallery</a></li>
-                    <li class="nav__item"><a>Find Us</a></li>
-                    <li class="nav__item"><a href="enquiries.html">Enquiries</a></li>
+                    <li class="nav__item"><a href="index">Home</a></li>
+                    <li class="nav__item"><a href="#" class="selected">Menu</a></li>
+                    <li class="nav__item"><a href="gallery">Gallery</a></li>
+                    <li class="nav__item"><a href="index#findUs">Find Us</a></li>
+                    <li class="nav__item"><a href="enquiries">Enquiries</a></li>
                 </ul>
             </nav>
             <div class="content">
-                <div v-show="!flipped || mobile" @click="flipped = !flipped" class="menu">
-                    <div class="menu--template">
-                        <div class="menu__header">
-                            <h1>Menu.</h1>
-                        </div>
-                        <div class="menu__items">
-                            <div class="menu__items--drink">
-                                <div>
-                                    <h4>Coffee</h4>
-                                    <ul class="menu__items--list">
-                                        <li v-for="coffee in coffees">{{coffee.name}} - {{coffee.price}}</li>
-                                    </ul>
-                                    <p>50p extra for marshmallows & whipped cream and/or syrups (Vanilla, Hazelnut or Caramel)</p>
-                                </div>
-                                <div>
-                                    <h4>Tea</h4>
-                                    <ul class="menu__items--list">
-                                        <li v-for="tea in teas">{{tea.name}} - {{tea.price}}</li>
-                                    </ul>
-                                    <p>Available flavours: Rhubarb & Custard, Green Tea, Green Tea with Lemon, Wild Berry, Mango & Strawberry or Blackcurrant</p>
-                                </div>
-                                <div>
-                                    <h4>Cold Drinks</h4>
-                                    <ul class="menu__items--list">
-                                        <li v-for="drink in coldDrinks">{{drink.name}} - {{drink.price}}</li>
-                                    </ul>
-                                    <p>Coca Cola, Diet Coke, 7up or Tango</p>
-                                </div>
-                            </div> 
-                            <div class="menu__items--food">
-                                <div>
-                                    <h4>Paninis</h4>
-                                    <ul class="menu__items--list">
-                                        <li v-for="panini in paninis">{{panini.name}} - {{panini.price}}</li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <h4>Sweets</h4>
-                                    <ul class="menu__items--list">
-                                        <li v-for="sweet in sweets">{{sweet.name}} - {{sweet.price}}</li>
-                                    </ul>
-                                    <p>All of our sweet treats are homemade, delicious and change daily. Please see our selection at the counter or ask a member of our team</p>
+                <transition name="flip">
+                    <div v-show="!flipped || mobile" @click="flipped = !flipped" class="menu" key="front">
+                        <div class="menu--template">
+                            <div class="menu__header">
+                                <h1>Menu.</h1><span>Click to see Canine Menu!</span>
+                            </div>
+                            <div class="menu__items">
+                                <div class="menu__items--drink">
+                                    <div>
+                                        <h4>Coffee</h4>
+                                        <ul class="menu__items--list">
+                                            <li v-for="coffee in coffees">{{coffee.name}} - {{coffee.price}}</li>
+                                        </ul>
+                                        <p>20p extra for marshmallows & whipped cream and/or syrups (Gingerbread, Hazelnut or Caramel)</p>
+                                    </div>
+                                    <div>
+                                        <h4>Tea</h4>
+                                        <ul class="menu__items--list">
+                                            <li v-for="tea in teas">{{tea.name}} - {{tea.price}}</li>
+                                        </ul>
+                                        <p>Available flavours: Rhubarb & Custard, Green Tea, Green Tea with Lemon, Wild Berry, Mango & Strawberry or Blackcurrant</p>
+                                    </div>
+                                    <div>
+                                        <h4>Cold Drinks</h4>
+                                        <ul class="menu__items--list">
+                                            <li v-for="drink in coldDrinks">{{drink.name}} - {{drink.price}}</li>
+                                        </ul>
+                                        <p>Coca Cola, Diet Coke, 7up or Tango</p>
+                                    </div>
+                                </div> 
+                                <div class="menu__items--food">
+                                    <div>
+                                        <h4>Paninis & Toasties</h4>
+                                        <ul class="menu__items--list">
+                                            <li v-for="panini in paninis">{{panini.name}} - {{panini.price}}</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h4>Sweets</h4>
+                                        <ul class="menu__items--list">
+                                            <li v-for="sweet in sweets">{{sweet.name}} - {{sweet.price}}</li>
+                                        </ul>
+                                        <p>All of our sweet treats are homemade, delicious and change daily. Please see our selection at the counter or ask a member of our team</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div v-show="flipped || mobile" @click="flipped = !flipped" class="dogMenu">
-                    <div class="menu--template">
-                        <div class="menu__header">
-                            <h1>Canine Menu.</h1>
-                        </div>
-                        <div class="menu__items">
-                            <div>
-                                <h4>Wet Food</h4>
-                                <ul class="menu__items--list">
-                                    <li v-for="food in wetFood">{{food.name}} - {{food.price}}</li>
-                                </ul>
-                                <p>Lamb Hotpot, Chicken & Turkey Casserole, Cottage Pie or Wild Campfire Stew</p>
+                </transition>
+                <transition name="backFlip">
+                    <div v-show="flipped || mobile" @click="flipped = !flipped" class="dogMenu" key="back">
+                        <div class="menu--template">
+                            <div class="menu__header menu__header--canine">
+                                <h1>Canine Menu.</h1><span>Click to see Human Menu!</span>
                             </div>
-                            <div>
-                                <h4>Treats</h4>
-                                <ul class="menu__items--list">
-                                    <li v-for="treat in treats">{{treat.name}} - {{treat.price}}</li>
-                                </ul>
-                                <p>Please see our selection of daily specials and branded treats at the counter or ask a member of our team</p>
-                            </div>
-                            <div>
-                                <h4>Dog Drinks</h4>
-                                <ul class="menu__items--list">
-                                    <li v-for="drink in dogDrinks">{{drink.name}} - {{drink.price}}</li>
-                                </ul>
-                                <ul class="menu__items--list">
-                                    <li><strong>Feel Good Herbal Tea</strong> - A natural support for immune & digestive systems and general well-being making it the perfect 'feel good' tea.</li>
-                                    <li><strong>Axiety Herbal Tea Bags</strong> - Provides naturally calming and settling qualities everyday and before stressful times such as fireworks or car journeys. The tea supports both the mental and physical well being for your dog.</li>
-                                    <li><strong>Fresh Breath Herbal Tea</strong> - This fresh breath tea is designed to benefit oral health, digestive systems and allow dogs to be free to breathe up close.</li>
-                                </ul>
+                            <div class="menu__items menu__items--canine">
+                                <div class="dog__menu--food">
+                                    <div>
+                                        <h4>Dog Food</h4>
+                                        <ul class="menu__items--list">
+                                            <li v-for="food in wetFood">{{food.name}} - {{food.price}}</li>
+                                        </ul>
+                                        <p>Lillys Kitchen Organic options include: Lamb Hotpot, Chicken & Turkey Casserole, Sunday Lunch, Wild Campfire Stew or Puppy Recipe Turkey & Duck</p>
+                                    </div>
+                                    <div>
+                                        <h4>Treats</h4>
+                                        <ul class="menu__items--list">
+                                            <li v-for="treat in treats">{{treat.name}} - {{treat.price}}</li>
+                                        </ul>
+                                        <p>Please see our selection of daily specials and branded treats at the counter or ask a member of our team</p>
+                                    </div>
+                                </div>
+                                <div class="dog__menu--drink">
+                                    <div>
+                                        <h4>Dog Drinks</h4>
+                                        <ul class="menu__items--list">
+                                            <li v-for="drink in dogDrinks">{{drink.name}} - {{drink.price}}</li>
+                                        </ul>
+                                        <ul class="menu__items--list menu__items--subList">
+                                            <li><strong>Feel Good Herbal Tea</strong> - A natural support for immune & digestive systems and general well-being making it the perfect 'feel good' tea.</li>
+                                            <li><strong>Axiety Herbal Tea Bags</strong> - Provides naturally calming and settling qualities everyday and before stressful times such as fireworks or car journeys. The tea supports both the mental and physical well being for your dog.</li>
+                                            <li><strong>Fresh Breath Herbal Tea</strong> - This fresh breath tea is designed to benefit oral health, digestive systems and allow dogs to be free to breathe up close.</li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </transition>
             </div>
             <div class="footer flex">
                     <aside class="footer__item">
                         <h3>Contact Us.</h3>
-                        <h5>Phone.</h5>
-                        <span>0000-0000000</span>
                         <h5>Email.</h5>
-                        <span>placeholder@caninecoffee.co.uk</span>
+                        <span>enquire@caninecoffee.co.uk</span>
                     </aside>
                     <aside class="footer__item">
                         <h3>Visit Us.</h3>
@@ -124,8 +134,10 @@
                     </aside>
                     <aside class="footer__item">
                         <h3>Opening Hours.</h3>
-                        <span>Mon - Fri: 08:30 - 16:00</span>
-                        <span>Weekends: 09:30 - 16:00</span>
+                        <span>Mon: 08:30 - 15:30</span>
+                        <span>Tues: Closed!</span>
+                        <span>Wed - Fri: 08:30 - 15:30</span>
+                        <span>Weekends: 09:30 - 15:30</span>
                     </aside>
                     <aside class="footer__item footer__item--wide">
                         <span>&copy; 2018 Canine Coffee</span>
